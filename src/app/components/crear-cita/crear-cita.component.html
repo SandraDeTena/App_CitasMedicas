@@ -1,5 +1,30 @@
-<div class="card">
+<div class="card bg-light">
     <div class="card-body">
-        <h3>Crear cita</h3>
+        <h5 class="card-title text-center">Agregar cita</h5>
+
+        <!-- Nombre completo -->
+        <div class="form-group mb-3">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" class="form-control" placeholder="Ingrese su nombre completo">
+        </div>
+
+        <!-- Fecha de ingreso -->
+        <div class="form-group mb-3">
+            <label for="fechaCita">Fecha de Cita</label>
+            <input type="date" id="fechaCita" class="form-control">
+        </div>
+
+        <!-- Hora de la cita -->
+        <div class="form-group mb-3">
+            <label for="hours">Hora</label>
+            <input type="time" id="hours" class="form-control">
+        </div>
+
+        <!-- Sintomas -->
+        <div class="form-group mb-3">
+            <label for="sintomas">Síntomas</label>
+            <textarea id="sintomas" rows="5" class="form-control" placeholder="Ingrese sus síntomas"></textarea>
+        </div>
+        <button style="width: 100%;" class="btn btn-warning btn-block">Agregar cita</button>
     </div>
 </div>
