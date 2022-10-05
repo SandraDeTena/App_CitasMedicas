@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-crear-cita',
+  selector: 'crear-cita',
   templateUrl: './crear-cita.component.html',
   styleUrls: ['./crear-cita.component.css']
 })
