@@ -5,32 +5,51 @@
             <span class="badge rounded-pill text-bg-danger">* Todos los campos del formulario son obligatorios</span>
         </div>
 
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
-        <!-- Nombre completo -->
-        <div class="form-group mb-3">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" [(ngModel)]="nombre" class="form-control"
-                placeholder="Ingrese su nombre completo">
-        </div>
+            <!-- Nombre completo -->
+            <div class="form-group mb-3">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" formControlName="nombre" class="form-control"
+                    placeholder="Ingrese su nombre completo">
+            </div>
 
-        <!-- Fecha de ingreso -->
-        <div class="form-group mb-3">
-            <label for="fecha">Fecha de Cita</label>
-            <input type="date" id="fecha" [(ngModel)]="fecha" class="form-control">
-        </div>
+            <!-- Edad -->
+            <div class="form-group mb-3">
+                <label for="edad">Edad</label>
+                <input type="number" id="edad" formControlName="edad" class="form-control"
+                    placeholder="Ingrese su edad">
+            </div>
 
-        <!-- Hora de la cita -->
-        <div class="form-group mb-3">
-            <label for="hora">Hora</label>
-            <input type="time" id="hora" [(ngModel)]="hora" class="form-control">
-        </div>
+            <!-- Documento Nacional de Identidad -->
+            <div class="form-group mb-3">
+                <label for="dni">DNI</label>
+                <input type="type" id="dni" formControlName="dni" class="form-control"
+                    placeholder="Ingrese su Documento Nacional de Identidad con letra">
+            </div>
 
-        <!-- Sintomas -->
-        <div class="form-group mb-3">
-            <label for="sintomas">Síntomas</label>
-            <textarea id="sintomas" [(ngModel)]="sintomas" rows="5" class="form-control"
-                placeholder="Ingrese sus síntomas"></textarea>
-        </div>
-        <button style="width: 100%;" class="btn btn-warning btn-block" (click)="agregarCita()">Agregar cita</button>
+            <!-- Fecha de ingreso -->
+            <div class="form-group mb-3">
+                <label for="fecha">Fecha de Cita</label>
+                <input type="date" id="fecha" formControlName="fecha" class="form-control">
+            </div>
+
+            <!-- Hora de la cita -->
+            <div class="form-group mb-3">
+                <label for="hora">Hora</label>
+                <input type="time" id="hora" formControlName="hora" class="form-control">
+            </div>
+
+            <!-- Sintomas -->
+            <div class="form-group mb-3">
+                <label for="sintomas">Síntomas</label>
+                <textarea id="sintomas" formControlName="sintomas" rows="5" class="form-control"
+                    placeholder="Ingrese sus síntomas"></textarea>
+            </div>
+            <button type="submit" style="width: 100%;" class="btn btn-warning btn-block" value="Enviar">Agregar
+                cita</button>
+
+        </form>
+        {{formulario.value |json}}
     </div>
 </div>
