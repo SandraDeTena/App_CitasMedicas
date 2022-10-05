@@ -1,1 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background: linear-gradient(rgba(236, 110, 158, 0.6), rgba(236, 110, 158, 0.6)), url(./assets/adn.jpg);
+}
