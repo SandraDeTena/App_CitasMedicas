@@ -12,7 +12,13 @@
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" formControlName="nombre" class="form-control"
                     placeholder="Ingrese su nombre completo">
+
+                <!-- <div class="error" *ngIf="formulario.controls.nombre.errors">
+                    El campo nombre es erroneo.
+                </div> -->
             </div>
+
+
 
             <!-- Edad -->
             <div class="form-group mb-3">
@@ -46,7 +52,8 @@
                 <textarea id="sintomas" formControlName="sintomas" rows="5" class="form-control"
                     placeholder="Ingrese sus síntomas"></textarea>
             </div>
-            <button type="submit" style="width: 100%;" class="btn btn-warning btn-block" value="Enviar">Agregar
+            <button type="submit" style="width: 100%;" class="btn btn-warning btn-block" value="Enviar"
+                [disabled]="!formulario.valid">Agregar
                 cita</button>
 
         </form>

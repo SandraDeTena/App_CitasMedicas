@@ -5,3 +5,16 @@ label {
 .card {
     margin: 0px 40px;
 }
+
+input.ng-valid.ng-touched {
+    border: 1px solid greenyellow;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.error {
+    font-size: 12px;
+    color: tomato;
+}
