@@ -20,11 +20,11 @@ export class CrearCitaComponent implements OnInit {
         Validators.minLength(3)]),
       edad: new FormControl('', [
         Validators.required,
-        // this.edadValidator
+        this.edadValidator
       ]),
       dni: new FormControl('', [
         Validators.required,
-        // this.dniValidator
+        this.dniValidator,
       ]),
       fecha: new FormControl('', [
         Validators.required,
@@ -47,43 +47,43 @@ export class CrearCitaComponent implements OnInit {
   }
 
   // Validación personalizada del DNI:
-  // dniValidator(formControl) {
-  //   const value = formControl.value;
-  //   const letras = 'TRWAGMYFPDXBNJZSQVHLCKET';
+  dniValidator(formControl: FormControl) {
+    const value = formControl.value;
+    const letras = 'TRWAGMYFPDXBNJZSQVHLCKET';
 
-  //   if (/^8\d{8}[a-zA-Z]$/.test(value)) {
-  //     const num = value.substr(0, value.length - 1);
-  //     const letra = value.charAt(value.length - 1);
+    if (/^8\d{8}[a-zA-Z]$/.test(value)) {
+      const num = value.substr(0, value.length - 1);
+      const letra = value.charAt(value.length - 1);
 
-  //     const calculo = num % 23;
+      const calculo = num % 23;
 
-  //     const letraseleccionada = letras.charAt(calculo);
-  //     if (letra.toUpperCase() == letraseleccionada) {
-  //       return null;
-  //     } else {
-  //       return { dniValidator: 'La letra no coincide con el número' }
-  //     }
+      const letraseleccionada = letras.charAt(calculo);
+      if (letra.toUpperCase() == letraseleccionada) {
+        return null;
+      } else {
+        return { dniValidator: 'La letra no coincide con el número' }
+      }
 
-  //   } else {
-  //     return { dniValidator: 'El DNI no tiene un formato correcto' }
-  //   }
+    } else {
+      return { dniValidator: 'El DNI no tiene un formato correcto' }
+    }
 
-  // }
+  }
 
   // Validador personalizado de la EDAD:
-  // edadValidator(formControl) {
-  //   const value = formControl.value;
-  //   console.log(value);
+  edadValidator(formControl: FormControl) {
+    const value = formControl.value;
+    console.log(value);
 
-  //   const edadMax = 100;
-  //   const edadMin = 15;
+    const edadMax = 100;
+    const edadMin = 15;
 
-  //   if (value >= 15 && value <= 100) {
-  //     return null;
-  //   } else {
-  //     return { edadValidator: { edadMax, edadMin } };
-  //   }
-  // }
+    if (value >= 15 && value <= 100) {
+      return null;
+    } else {
+      return { edadValidator: { edadMax, edadMin } };
+    }
+  }
 
 
   // agregarCita() {
